@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.13 on win32)" generated="2025-05-29T16:08:27.127113" rpa="false" schemaversion="5">
+<suite id="s1" name="EndToEnd TestSuite" source="C:\PycharmProjects\robot-scripts\end-to-end\Tests\EndToEnd\EndToEnd_TestSuite.robot">
+<test id="s1-t1" name="should be able to access multiple applications" line="18">
+<kw name="Begin web test" owner="CommonWeb" type="SETUP">
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-05-29T16:08:27.397498" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T16:08:27.398498" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T16:08:27.397498" elapsed="3.305171"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T16:08:30.704669" elapsed="0.108547"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:08:27.396488" elapsed="3.417723"/>
+</kw>
+<kw name="Navigate to &quot;Landing&quot; page" owner="FrontOfficeApp">
+<kw name="Load URL" owner="FrontOffice.LandingPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-29T16:08:30.818205" level="INFO">Opening url 'https://automationplayground.com/front-office/'</msg>
+<arg>${FrontOffice_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-29T16:08:30.817205" elapsed="4.528775"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:08:30.816211" elapsed="4.529769"/>
+</kw>
+<kw name="VerifyPageLoaded" owner="FrontOffice.LandingPage">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LANDING_NAVIGATION_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-29T16:08:35.347054" elapsed="0.015046"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:08:35.347054" elapsed="0.015046"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:08:30.815208" elapsed="4.546892"/>
+</kw>
+<kw name="Navigate to &quot;Landing&quot; page" owner="BackOfficeApp">
+<kw name="Load URL" owner="BackOffice.LandingPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-29T16:08:35.364090" level="INFO">Opening url 'https://automationplayground.com/back-office/'</msg>
+<arg>${BackOffice_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-29T16:08:35.364090" elapsed="2.283844"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:08:35.364090" elapsed="2.283844"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:08:35.363090" elapsed="2.285882"/>
+</kw>
+<kw name="End web test" owner="CommonWeb" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-29T16:08:37.649651" elapsed="6.372111"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:08:37.649651" elapsed="6.372111"/>
+</kw>
+<doc>This test case verified the accessibility of different application from a single test case.</doc>
+<tag>test1</tag>
+<status status="PASS" start="2025-05-29T16:08:27.395069" elapsed="16.626693"/>
+</test>
+<doc>This test suite is designed to test the interoperability of multiple applications within a single test case.</doc>
+<status status="PASS" start="2025-05-29T16:08:27.129477" elapsed="16.894287"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">test1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="EndToEnd TestSuite">EndToEnd TestSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

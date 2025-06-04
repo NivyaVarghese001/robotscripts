@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.13 on win32)" generated="2025-03-12T09:56:50.576521" rpa="false" schemaversion="5">
+<suite id="s1" name="List" source="C:\PycharmProjects\robot-scripts\Variable-Operations\Tests\List.robot">
+<test id="s1-t1" name="Show list variables" line="6">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T09:56:50.608177" level="INFO">list1</msg>
+<arg>${LIST_VARIABLES}[0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T09:56:50.608177" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T09:56:50.608177" level="INFO">list2</msg>
+<arg>${LIST_VARIABLES}[1]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T09:56:50.608177" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T09:56:50.608177" level="INFO">list3</msg>
+<arg>${LIST_VARIABLES}[2]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T09:56:50.608177" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-12T09:56:50.608177" elapsed="0.000000"/>
+</test>
+<test id="s1-t2" name="Show list variables 2" line="11">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-12T09:56:50.623812" level="INFO">@{list_variable} = [ setlist1 | setlist2 | setlist3 ]</msg>
+<var>@{list_variable}</var>
+<arg>setlist1</arg>
+<arg>setlist2</arg>
+<arg>setlist3</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-12T09:56:50.623812" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T09:56:50.623812" level="INFO">setlist1</msg>
+<arg>${list_variable}[0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T09:56:50.623812" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T09:56:50.623812" level="INFO">setlist2</msg>
+<arg>${list_variable}[1]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T09:56:50.623812" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T09:56:50.623812" level="INFO">setlist3</msg>
+<arg>${list_variable}[2]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T09:56:50.623812" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-12T09:56:50.623812" elapsed="0.000000"/>
+</test>
+<status status="PASS" start="2025-03-12T09:56:50.592159" elapsed="0.031653"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="List">List</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

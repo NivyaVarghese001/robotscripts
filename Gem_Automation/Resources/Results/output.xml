@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.13 on win32)" generated="2025-04-15T15:36:21.256477" rpa="false" schemaversion="5">
+<suite id="s1" name="SSHConnection" source="C:\PycharmProjects\robot-scripts\Gem_Automation\Resources\SSHConnection.robot">
+<test id="s1-t1" name="Restart Target Server" line="12">
+<kw name="Set Client Configuration" owner="SSHLibrary">
+<msg time="2025-04-15T15:36:21.429313" level="FAIL">No open connection.</msg>
+<arg>StrictHostKeyChecking=no</arg>
+<doc>Update the `configuration` of the current connection.</doc>
+<status status="FAIL" start="2025-04-15T15:36:21.429313" elapsed="0.000000">No open connection.</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Client configuration set successfully.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${HOST}</arg>
+<arg>port=22</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<arg>msg=Failed to open connection.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Connection opened successfully.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<arg>msg=Failed to log in.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Logged in successfully.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<arg>${RESTART_COMMAND}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Restart command sent successfully.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Close Connection" owner="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Connection closed successfully.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-04-15T15:36:21.429313" elapsed="0.000000"/>
+</kw>
+<doc>Connect to the server and restart the target.</doc>
+<status status="FAIL" start="2025-04-15T15:36:21.429313" elapsed="0.000000">No open connection.</status>
+</test>
+<status status="FAIL" start="2025-04-15T15:36:21.256477" elapsed="0.172836"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="SSHConnection">SSHConnection</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

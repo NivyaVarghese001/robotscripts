@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.13 on win32)" generated="2025-05-29T11:54:53.646700" rpa="false" schemaversion="5">
+<suite id="s1" name="GemTestSuite" source="C:\PycharmProjects\robot-scripts\Gem_Automation\Tests\GemTestSuite.robot">
+<test id="s1-t1" name="Reset core services" line="42">
+<kw name="Begin web test" owner="Common" type="SETUP">
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-05-29T11:54:53.960462" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:54:53.960462" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T11:54:53.960462" elapsed="50.668144"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T11:55:44.629624" elapsed="0.036999"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:54:53.960462" elapsed="50.707157"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-29T11:55:44.668619" level="INFO">The target IP is 10.94.98.139</msg>
+<arg>The target IP is ${TARGET_IP}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-29T11:55:44.668619" elapsed="0.000000"/>
+</kw>
+<kw name="Open" owner="GemPage">
+<kw name="Open" owner="LoginPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:55:44.671623" level="INFO">Opening url 'http://10.94.98.139:8888/gem'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-29T11:55:44.671623" elapsed="4.155567"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-05-29T11:55:44.670618" elapsed="4.156572"/>
+</kw>
+<arg>${URL}</arg>
+<status status="PASS" start="2025-05-29T11:55:44.669620" elapsed="4.157570"/>
+</kw>
+<kw name="LogintoGem" owner="GemPage">
+<kw name="Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:55:48.830193" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
+<arg>${Button_Login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T11:55:48.830193" elapsed="0.145082"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:55:48.829191" elapsed="0.146084"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:55:48.828190" elapsed="0.147085"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T11:55:51.990563" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T11:55:48.976274" elapsed="3.014289"/>
+</kw>
+<kw name="Open" owner="GemPage">
+<kw name="Open" owner="LoginPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:55:51.992565" level="INFO">Opening url 'http://10.94.98.139:8888/gem/mmx/connect/configuration'</msg>
+<msg time="2025-05-29T11:55:52.171332" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69c0c]
+	(No symbol) [0x0x7ff6dacb043f]
+	(No symbol) [0x0x7ff6dace8532]
+	(No symbol) [0x0x7ff6dace2f5c]
+	(No symbol) [0x0x7ff6dace2039]
+	(No symbol) [0x0x7ff6dac35fc5]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	(No symbol) [0x0x7ff6dac35036]
+	GetHandleVerifier [0x0x7ff6db2972f8+4012040]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</msg>
+<msg time="2025-05-29T11:55:52.173336" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac55bc5]
+	(No symbol) [0x0x7ff6dac7ac04]
+	(No symbol) [0x0x7ff6dacf0195]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-05-29T11:55:51.992565" elapsed="0.196546">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac55bc5]
+	(No symbol) [0x0x7ff6dac7ac04]
+	(No symbol) [0x0x7ff6dacf0195]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</kw>
+<arg>${url}</arg>
+<status status="FAIL" start="2025-05-29T11:55:51.991564" elapsed="0.197547">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac55bc5]
+	(No symbol) [0x0x7ff6dac7ac04]
+	(No symbol) [0x0x7ff6dacf0195]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</kw>
+<arg>${URL_MMX_CONFIG}</arg>
+<status status="FAIL" start="2025-05-29T11:55:51.991564" elapsed="0.198548">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac55bc5]
+	(No symbol) [0x0x7ff6dac7ac04]
+	(No symbol) [0x0x7ff6dacf0195]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-29T11:55:52.191119" elapsed="0.000000"/>
+</kw>
+<kw name="VerifyConfigPageLoaded" owner="GemPage">
+<status status="NOT RUN" start="2025-05-29T11:55:52.192117" elapsed="0.000000"/>
+</kw>
+<kw name="Purge" owner="GemPage">
+<status status="NOT RUN" start="2025-05-29T11:55:52.193115" elapsed="0.001032"/>
+</kw>
+<kw name="End web test" owner="Common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-29T11:55:52.195148" elapsed="2.007192"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:55:52.195148" elapsed="2.008193"/>
+</kw>
+<tag>clearcache</tag>
+<status status="FAIL" start="2025-05-29T11:54:53.960462" elapsed="60.242879">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac55bc5]
+	(No symbol) [0x0x7ff6dac7ac04]
+	(No symbol) [0x0x7ff6dacf0195]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</test>
+<test id="s1-t2" name="DeactivateHTTPbackend" line="55">
+<kw name="Begin web test" owner="Common" type="SETUP">
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-05-29T11:55:54.206340" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:55:54.207339" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T11:55:54.206340" elapsed="3.360827"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T11:55:57.567167" elapsed="0.063017"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:55:54.205336" elapsed="3.425909"/>
+</kw>
+<kw name="Open" owner="GemPage">
+<kw name="Open" owner="LoginPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:55:57.637194" level="INFO">Opening url 'http://10.94.98.139:8888/gem'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-29T11:55:57.636217" elapsed="4.273475"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-05-29T11:55:57.634169" elapsed="4.275523"/>
+</kw>
+<arg>${URL}</arg>
+<status status="PASS" start="2025-05-29T11:55:57.633176" elapsed="4.276516"/>
+</kw>
+<kw name="LogintoGem" owner="GemPage">
+<kw name="Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:01.911722" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
+<arg>${Button_Login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T11:56:01.910685" elapsed="0.129890"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:01.910685" elapsed="0.129890"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:01.910685" elapsed="0.129890"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T11:56:05.041416" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T11:56:02.040575" elapsed="3.000841"/>
+</kw>
+<kw name="Open" owner="GemPage">
+<kw name="Open" owner="LoginPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:05.041416" level="INFO">Opening url 'http://10.94.98.139:8888/gem/mmx/navigation/asianavigation/nav_https'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-29T11:56:05.041416" elapsed="3.869836"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-05-29T11:56:05.041416" elapsed="3.869836"/>
+</kw>
+<arg>${URL_NAV_HTTPS}</arg>
+<status status="PASS" start="2025-05-29T11:56:05.041416" elapsed="3.869836"/>
+</kw>
+<kw name="VerifyConfigPageLoaded" owner="GemPage">
+<kw name="Verify configuration page loaded" owner="ConfigPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:08.939645" level="INFO">${title} = /mmx/navigation/asianavigation/nav_https</msg>
+<var>${title}</var>
+<arg>css=#rFood</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T11:56:08.913158" elapsed="0.026608"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-29T11:56:08.939833" level="INFO">/mmx/navigation/asianavigation/nav_https loaded</msg>
+<arg>${title} loaded</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-29T11:56:08.939833" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:08.939833" level="INFO">Current page contains text '/mmx/navigation/asianavigation/nav_https'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T11:56:08.939833" elapsed="0.000000"/>
+</kw>
+<doc>Verify that the configuration page is loaded by checking the title and URL.</doc>
+<status status="PASS" start="2025-05-29T11:56:08.912139" elapsed="0.027694"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:08.912139" elapsed="0.027694"/>
+</kw>
+<kw name="nav_https_deactivation" owner="GemPage">
+<kw name="DeactivateHTTPbackend" owner="NavHttps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${pageLoadText}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-29T11:56:08.939833" elapsed="4.077557"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:13.017390" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
+<arg>${deactivationButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T11:56:13.017390" elapsed="0.065924"/>
+</kw>
+<kw name="VerifySuccessfulDeactivation" owner="NavHttps">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${verificationText}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-29T11:56:13.083314" elapsed="1.292367"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:13.083314" elapsed="1.292367"/>
+</kw>
+<doc>Deactivate the HTTP backend</doc>
+<status status="PASS" start="2025-05-29T11:56:08.939833" elapsed="5.435848"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:08.939833" elapsed="5.435848"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T11:56:16.384393" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T11:56:14.375681" elapsed="2.008712"/>
+</kw>
+<kw name="sync_page" owner="GemPage">
+<kw name="Page_sync" owner="ConfigPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:16.384393" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup &gt; div &gt; ul &gt; li.ui-block-c &gt; button'.</msg>
+<arg>${Refresh_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T11:56:16.384393" elapsed="0.072465"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T11:56:17.461706" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T11:56:16.456858" elapsed="1.004848"/>
+</kw>
+<doc>Verify that the configuration page is loaded by checking the title and URL.</doc>
+<status status="PASS" start="2025-05-29T11:56:16.384393" elapsed="1.077313"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:16.384393" elapsed="1.077313"/>
+</kw>
+<kw name="End web test" owner="Common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-29T11:56:17.461706" elapsed="6.463523"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:17.461706" elapsed="6.463523"/>
+</kw>
+<tag>clearcache</tag>
+<status status="PASS" start="2025-05-29T11:55:54.205336" elapsed="29.720868"/>
+</test>
+<test id="s1-t3" name="DeactivateNavCache" line="66">
+<kw name="Begin web test" owner="Common" type="SETUP">
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-05-29T11:56:23.928196" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:23.928196" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T11:56:23.928196" elapsed="3.035484"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T11:56:26.964679" elapsed="0.082539"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:23.928196" elapsed="3.119022"/>
+</kw>
+<kw name="Open" owner="GemPage">
+<kw name="Open" owner="LoginPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:27.078238" level="INFO">Opening url 'http://10.94.98.139:8888/gem'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-29T11:56:27.077234" elapsed="0.455776"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-05-29T11:56:27.076232" elapsed="0.456778"/>
+</kw>
+<arg>${URL}</arg>
+<status status="PASS" start="2025-05-29T11:56:27.075234" elapsed="0.458845"/>
+</kw>
+<kw name="LogintoGem" owner="GemPage">
+<kw name="Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T11:56:27.538013" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
+<msg time="2025-05-29T11:56:28.213757" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac420d1]
+	(No symbol) [0x0x7ff6daceff4e]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</msg>
+<msg time="2025-05-29T11:56:28.218785" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac420d1]
+	(No symbol) [0x0x7ff6daceff4e]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</msg>
+<arg>${Button_Login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2025-05-29T11:56:27.538013" elapsed="0.723744">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac420d1]
+	(No symbol) [0x0x7ff6daceff4e]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-05-29T11:56:27.537011" elapsed="0.725759">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac420d1]
+	(No symbol) [0x0x7ff6daceff4e]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-05-29T11:56:27.536009" elapsed="0.726761">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac420d1]
+	(No symbol) [0x0x7ff6daceff4e]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-29T11:56:28.288339" elapsed="0.000977"/>
+</kw>
+<kw name="Open" owner="GemPage">
+<arg>${URL_NAV_CACHE}</arg>
+<status status="NOT RUN" start="2025-05-29T11:56:28.314317" elapsed="0.001001"/>
+</kw>
+<kw name="VerifyConfigPageLoaded" owner="GemPage">
+<status status="NOT RUN" start="2025-05-29T11:56:28.327319" elapsed="0.000000"/>
+</kw>
+<kw name="nav_cache_clear" owner="GemPage">
+<status status="NOT RUN" start="2025-05-29T11:56:28.335320" elapsed="0.000999"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-29T11:56:28.337341" elapsed="0.000000"/>
+</kw>
+<kw name="sync_page" owner="GemPage">
+<status status="NOT RUN" start="2025-05-29T11:56:28.339315" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>!!!!! PLEASE RESTART TARGET !!!!!!!!!!!!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-05-29T11:56:28.343318" elapsed="0.000998"/>
+</kw>
+<kw name="End web test" owner="Common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-29T11:56:28.377333" elapsed="6.342864"/>
+</kw>
+<status status="PASS" start="2025-05-29T11:56:28.348315" elapsed="6.371882"/>
+</kw>
+<tag>clearcache</tag>
+<status status="FAIL" start="2025-05-29T11:56:23.927194" elapsed="10.793003">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac420d1]
+	(No symbol) [0x0x7ff6daceff4e]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</status>
+</test>
+<status status="FAIL" start="2025-05-29T11:54:53.646700" elapsed="101.075971"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="2" skip="0">clearcache</stat>
+</tag>
+<suite>
+<stat pass="1" fail="2" skip="0" id="s1" name="GemTestSuite">GemTestSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-29T11:55:52.171332" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69c0c]
+	(No symbol) [0x0x7ff6dacb043f]
+	(No symbol) [0x0x7ff6dace8532]
+	(No symbol) [0x0x7ff6dace2f5c]
+	(No symbol) [0x0x7ff6dace2039]
+	(No symbol) [0x0x7ff6dac35fc5]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	(No symbol) [0x0x7ff6dac35036]
+	GetHandleVerifier [0x0x7ff6db2972f8+4012040]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</msg>
+<msg time="2025-05-29T11:56:28.213757" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6daed6f65+78965]
+	GetHandleVerifier [0x0x7ff6daed6fc0+79056]
+	(No symbol) [0x0x7ff6dac69dda]
+	(No symbol) [0x0x7ff6dac420d1]
+	(No symbol) [0x0x7ff6daceff4e]
+	(No symbol) [0x0x7ff6dad106cd]
+	(No symbol) [0x0x7ff6dace8443]
+	(No symbol) [0x0x7ff6dacb1311]
+	(No symbol) [0x0x7ff6dacb20a3]
+	GetHandleVerifier [0x0x7ff6db18e26d+2926461]
+	GetHandleVerifier [0x0x7ff6db188993+2903715]
+	GetHandleVerifier [0x0x7ff6db1a6aed+3026941]
+	GetHandleVerifier [0x0x7ff6daef16fe+187406]
+	GetHandleVerifier [0x0x7ff6daef96ef+220159]
+	GetHandleVerifier [0x0x7ff6daedfaf4+114692]
+	GetHandleVerifier [0x0x7ff6daedfca9+115129]
+	GetHandleVerifier [0x0x7ff6daec64d8+10728]
+	BaseThreadInitThunk [0x0x7ffffc4f259d+29]
+	RtlUserThreadStart [0x0x7ffffdb4af58+40]
+</msg>
+</errors>
+</robot>

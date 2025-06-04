@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.13 on win32)" generated="2025-03-06T18:23:37.310607" rpa="false" schemaversion="5">
+<suite id="s1" name="Gem Trial" source="C:\PycharmProjects\robot-scripts\demo\gem_trial.robot">
+<test id="s1-t1" name="Login to gem page" line="9">
+<kw name="Begin browser">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-06T18:23:37.546460" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-06T18:23:37.546460" elapsed="11.929038"/>
+</kw>
+<status status="PASS" start="2025-03-06T18:23:37.546460" elapsed="11.929038"/>
+</kw>
+<kw name="Enter to login page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-06T18:23:49.475498" level="INFO">Opening url 'http://10.94.98.170:8888/gem'</msg>
+<arg>http://10.94.98.170:8888/gem</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-06T18:23:49.475498" elapsed="3.680611"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Green Engineering Menu</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-06T18:23:53.157118" elapsed="0.011905"/>
+</kw>
+<status status="PASS" start="2025-03-06T18:23:49.475498" elapsed="3.693525"/>
+</kw>
+<kw name="Enlarge browser window">
+<kw name="Set Window Position" owner="SeleniumLibrary">
+<arg>x=0</arg>
+<arg>y=0</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="PASS" start="2025-03-06T18:23:53.179388" elapsed="0.033349"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>width=1582</arg>
+<arg>height=2582</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-03-06T18:23:53.212737" elapsed="0.377248"/>
+</kw>
+<status status="PASS" start="2025-03-06T18:23:53.169023" elapsed="0.420962"/>
+</kw>
+<kw name="Click login button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-06T18:23:53.589985" level="INFO">Clicking button 'Please click here to login'.</msg>
+<arg>Please click here to login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-06T18:23:53.589985" elapsed="0.087335"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Green Engineering Menu</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-06T18:23:53.677320" elapsed="0.008513"/>
+</kw>
+<status status="PASS" start="2025-03-06T18:23:53.589985" elapsed="0.095848"/>
+</kw>
+<kw name="End browser">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-06T18:23:53.686833" elapsed="2.319565"/>
+</kw>
+<status status="PASS" start="2025-03-06T18:23:53.685833" elapsed="2.320565"/>
+</kw>
+<doc>This is some basic information about the test case</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-03-06T18:23:37.546460" elapsed="18.459938"/>
+</test>
+<doc>this is the basic infomation of the test suite</doc>
+<status status="PASS" start="2025-03-06T18:23:37.310607" elapsed="18.695791"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Gem Trial">Gem Trial</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
