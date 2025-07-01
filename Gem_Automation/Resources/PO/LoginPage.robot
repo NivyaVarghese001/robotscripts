@@ -1,10 +1,11 @@
 *** Settings ***
 #documentation    : This is a test suite for the example application.
 Library    SeleniumLibrary
+#Resource    ../Data/AutomatedInputData.robot
 
-*** Variables ***
-${Gem_title}        Green Engineering Menu
-${Button_Login}     css=body > div.ui-page.ui-page-theme-a.ui-page-active > div.ui-content > button
+#*** Variables ***
+#${LoginPage_Gem_title}        Green Engineering Menu
+#${LoginPage_Button_Login}     css=body > div.ui-page.ui-page-theme-a.ui-page-active > div.ui-content > button
 
 
 *** Keywords ***
@@ -16,9 +17,9 @@ Open
 Verify Page Loaded_Gem
     ${Home_title}    get title
     #log   ${Home_title}
-    wait until page contains    ${Gem_title}
+    wait until page contains    ${LoginPage_Gem_title}
 
 Login
-    click button        ${Button_Login}
+    click button        ${LoginPage_Button_Login}
 
 

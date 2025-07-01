@@ -2,6 +2,8 @@
 #documentation    : This is a test suite for the example application.
 Resource    ../Resources/Common.robot
 Resource    ../Resources/GemPage.robot
+Resource    ../Data/AutomatedInputData.robot
+
 test setup    Begin web test
 test teardown    End web test
 
@@ -14,19 +16,17 @@ test teardown    End web test
 
 # robot -d Results -i clearcache -v TARGET_IP:10.94.98.139 Tests/GemTestSuite.robot
 # robot -d Results -i online -v TARGET_IP:10.94.98.139 Tests/GemTestSuite.robot
-
-
-*** Variables ***
-${BROWSER}                  chrome
-${TARGET_IP}                10.94.98.42
-${BASE_URL}                 http://${TARGET_IP}:8888
+#*** Variables ***
+#${BROWSER}                  chrome
+#${TARGET_IP}                10.94.98.42
+#${BASE_URL}                 http://${TARGET_IP}:8888
 #${BASE_URL}                 http://192.168.1.74:8888
-${URL}                      ${BASE_URL}/gem
-${URL_MMX_CONFIG}           ${BASE_URL}/gem/mmx/connect/configuration
-${URL_NAV_HTTPS}            ${BASE_URL}/gem/mmx/navigation/asianavigation/nav_https
-${URL_NAV_CACHE}            ${BASE_URL}/gem/mmx/navigation/asianavigation/navcache
-${URL_BackendSettings}      ${BASE_URL}/gem/mmx/connect/backendsettings
-${URL_Request_Reset_with_persistance}       ${BASE_URL}/gem/debugging
+#${URL}                      ${BASE_URL}/gem
+#${URL_MMX_CONFIG}           ${BASE_URL}/gem/mmx/connect/configuration
+#${URL_NAV_HTTPS}            ${BASE_URL}/gem/mmx/navigation/asianavigation/nav_https
+#${URL_NAV_CACHE}            ${BASE_URL}/gem/mmx/navigation/asianavigation/navcache
+#${URL_BackendSettings}      ${BASE_URL}/gem/mmx/connect/backendsettings
+#${URL_Request_Reset_with_persistance}       ${BASE_URL}/gem/debugging
 *** Test Cases ***
 
 GemLogin
@@ -71,19 +71,7 @@ DeactivateNavCache
     sleep    2s
     GemPage.sync_page
     log to console    !!!!! PLEASE RESTART TARGET !!!!!!!!!!!!
-
-ResetWithPersistance
-    [Tags]  now
-    GemPage.Open     ${URL}
-    GemPage.Verify Page Loaded
-    GemPage.LogintoGem
-    sleep    1s
-    GemPage.Open        ${URL_Request_Reset_with_persistance}
-    sleep    1s
-    GemPage.InitiateResetWithPersistance
-    sleep    2s
-    GemPage.sync_page
-    sleep    90s
+    log to console    !!!!! After Restating please run script for online init !!!!!!!!!!!!
 
 
 
@@ -108,22 +96,41 @@ DeactivateComponentProtection
     GemPage.DeactivateComponentProtection
     sleep    2s
     GemPage.sync_page
-    sleep   60s
-    GemPage.Verify_ODP_EU_Approval
-    #add steps to verify the successfull online connection , ODP EU APPROVAL , ServiceList verified or Approval
+    sleep   2s
 
-ResetWithPersistance
-    [Tags]  online
+VerifyOnlineActivationStatus
+    [Documentation]    This test case verifies the online activation status.
+    [Tags]      online
     GemPage.Open     ${URL}
     GemPage.Verify Page Loaded
     GemPage.LogintoGem
     sleep    1s
-    GemPage.Open        ${URL_Request_Reset_with_persistance}
+    GemPage.Open        ${URL_BackendSettings}
+    sleep    5s
+    GemPage.VerifyOnlineActivationStatus
+    debugging.scroll to bottom
+    GemPage.Verify Current Esobackend
+    GemPage.Verify Current realm
+
+VerifyBackendRegistartionStatus
+    [Documentation]    This test case verifies the backend registration status.
+    [Tags]      online
+    GemPage.Open     ${URL}
+    GemPage.Verify Page Loaded
+    GemPage.LogintoGem
     sleep    1s
-    GemPage.InitiateResetWithPersistance
-    sleep    2s
-    GemPage.sync_page
-    sleep    90s
+    GemPage.Open        ${URL_Connect}
+    sleep    5s
+    ${all_checks_passed}=    GemPage.VerifyBackendChecks
+    set suite variable      ${all_checks_passed}    ${all_checks_passed}
+
+ResetWithPersistance
+    [Tags]  online
+    Run Keyword If    ${all_checks_passed}    GemPage.ResetWithPersistanceSteps
+
+
+
+
 
 
 

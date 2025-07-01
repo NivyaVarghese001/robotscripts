@@ -1,564 +1,565 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.9.13 on win32)" generated="2025-06-03T16:01:20.227208" rpa="false" schemaversion="5">
+<robot generator="Robot 6.0.2 (Python 3.11.5 on win32)" generated="20250627 15:41:42.753" rpa="false" schemaversion="3">
 <suite id="s1" name="GemTestSuite" source="C:\PycharmProjects\robot-scripts\Gem_Automation\Tests\GemTestSuite.robot">
-<test id="s1-t1" name="SetBackEndSettings" line="90">
-<kw name="Begin web test" owner="Common" type="SETUP">
-<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<test id="s1-t1" name="VerifyBackendRegistartionStatus" line="115">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2025-06-03T16:01:20.568858" elapsed="0.000000"/>
+<status status="PASS" starttime="20250627 15:41:43.051" endtime="20250627 15:41:43.051"/>
 </kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:20.568858" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:01:20.568858" elapsed="3.227527"/>
+<msg timestamp="20250627 15:41:43.067" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20250627 15:41:43.067" endtime="20250627 15:41:45.637"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-03T16:01:23.796385" elapsed="0.072526"/>
+<status status="PASS" starttime="20250627 15:41:45.637" endtime="20250627 15:41:45.673"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:20.568858" elapsed="3.300053"/>
+<status status="PASS" starttime="20250627 15:41:43.051" endtime="20250627 15:41:45.673"/>
 </kw>
-<kw name="Open" owner="GemPage">
-<kw name="Open" owner="LoginPage">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:23.880911" level="INFO">Opening url 'http://192.168.1.76:8888/gem'</msg>
+<kw name="Open" library="GemPage">
+<arg>${URL}</arg>
+<kw name="Open" library="LoginPage">
+<arg>${url}</arg>
+<kw name="Go To" library="SeleniumLibrary">
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:01:23.878908" elapsed="4.062498"/>
+<msg timestamp="20250627 15:41:45.673" level="INFO">Opening url 'http://10.94.98.42:8888/gem'</msg>
+<status status="PASS" starttime="20250627 15:41:45.673" endtime="20250627 15:41:49.242"/>
 </kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-06-03T16:01:23.875940" elapsed="4.066438"/>
+<status status="PASS" starttime="20250627 15:41:45.673" endtime="20250627 15:41:49.242"/>
 </kw>
-<arg>${URL}</arg>
-<status status="PASS" start="2025-06-03T16:01:23.871909" elapsed="4.070469"/>
+<status status="PASS" starttime="20250627 15:41:45.673" endtime="20250627 15:41:49.242"/>
 </kw>
-<kw name="Verify Page Loaded" owner="GemPage">
-<kw name="Verify Page Loaded_Gem" owner="LoginPage">
-<kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:27.956273" level="INFO">${Home_title} = Green Engineering Menu 6.1.6</msg>
+<kw name="Verify Page Loaded" library="GemPage">
+<kw name="Verify Page Loaded_Gem" library="LoginPage">
+<kw name="Get Title" library="SeleniumLibrary">
 <var>${Home_title}</var>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-06-03T16:01:27.945378" elapsed="0.010895"/>
+<msg timestamp="20250627 15:41:49.254" level="INFO">${Home_title} = Green Engineering Menu 6.1.6</msg>
+<status status="PASS" starttime="20250627 15:41:49.243" endtime="20250627 15:41:49.254"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${Gem_title}</arg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${LoginPage_Gem_title}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-03T16:01:27.957289" elapsed="0.015994"/>
+<status status="PASS" starttime="20250627 15:41:49.255" endtime="20250627 15:41:49.269"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:27.944378" elapsed="0.028905"/>
+<status status="PASS" starttime="20250627 15:41:49.243" endtime="20250627 15:41:49.269"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:27.943375" elapsed="0.029908"/>
+<status status="PASS" starttime="20250627 15:41:49.243" endtime="20250627 15:41:49.269"/>
 </kw>
-<kw name="LogintoGem" owner="GemPage">
-<kw name="Login" owner="LoginPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:27.973283" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
-<arg>${Button_Login}</arg>
+<kw name="LogintoGem" library="GemPage">
+<kw name="Login" library="LoginPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LoginPage_Button_Login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:01:27.973283" elapsed="0.116546"/>
+<msg timestamp="20250627 15:41:49.269" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
+<status status="PASS" starttime="20250627 15:41:49.269" endtime="20250627 15:41:49.390"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:27.973283" elapsed="0.116546"/>
+<status status="PASS" starttime="20250627 15:41:49.269" endtime="20250627 15:41:49.390"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:27.973283" elapsed="0.116546"/>
+<status status="PASS" starttime="20250627 15:41:49.269" endtime="20250627 15:41:49.390"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:29.091620" level="INFO">Slept 1 second.</msg>
+<kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:28.089829" elapsed="1.001791"/>
+<msg timestamp="20250627 15:41:50.390" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250627 15:41:49.390" endtime="20250627 15:41:50.390"/>
 </kw>
-<kw name="Open" owner="GemPage">
-<kw name="Open" owner="LoginPage">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:29.091620" level="INFO">Opening url 'http://192.168.1.76:8888/gem/mmx/connect/backendsettings'</msg>
+<kw name="Open" library="GemPage">
+<arg>${URL_Connect}</arg>
+<kw name="Open" library="LoginPage">
+<arg>${url}</arg>
+<kw name="Go To" library="SeleniumLibrary">
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:01:29.091620" elapsed="0.512310"/>
+<msg timestamp="20250627 15:41:50.390" level="INFO">Opening url 'http://10.94.98.42:8888/gem/mmx/connect'</msg>
+<status status="PASS" starttime="20250627 15:41:50.390" endtime="20250627 15:41:50.585"/>
 </kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-06-03T16:01:29.091620" elapsed="0.513364"/>
+<status status="PASS" starttime="20250627 15:41:50.390" endtime="20250627 15:41:50.586"/>
 </kw>
-<arg>${URL_BackendSettings}</arg>
-<status status="PASS" start="2025-06-03T16:01:29.091620" elapsed="0.513364"/>
+<status status="PASS" starttime="20250627 15:41:50.390" endtime="20250627 15:41:50.586"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:32.616291" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:29.604984" elapsed="3.011307"/>
+<msg timestamp="20250627 15:41:55.586" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250627 15:41:50.586" endtime="20250627 15:41:55.586"/>
 </kw>
-<kw name="Set_AudiBackend" owner="GemPage">
-<kw name="SetAudiBackEnd" owner="BackendSettings">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:32.616291" level="INFO">Typing text '14' into text field 'xpath=//div[@data-role='content']/div[1]/div/input'.</msg>
-<arg>${audibackend_locator}</arg>
-<arg>${audi_backend}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:01:32.616291" elapsed="0.081178"/>
+<kw name="VerifyBackendChecks" library="GemPage">
+<var>${all_checks_passed}</var>
+<doc>Perform all backend checks and return combined result.</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${car_status}</var>
+<arg>GemPage.Verify car_registrationstatus</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verify car_registrationstatus" library="GemPage">
+<kw name="VerifyRegistationStatus" library="Connect">
+<arg>${Connect_RegistarionStatus}</arg>
+<arg>${Connect_carRegistation_Success_Text}</arg>
+<doc>Verify the car registration status on the page by checking the value of the input tag matches the expected text.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250627 15:41:55.586" endtime="20250627 15:41:55.591"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:34.711735" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:32.706388" elapsed="2.005347"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_status}</var>
+<arg>${input_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250627 15:41:55.622" level="INFO">${actual_status} = not registered yet</msg>
+<status status="PASS" starttime="20250627 15:41:55.591" endtime="20250627 15:41:55.622"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:32.616291" elapsed="2.095444"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:32.616291" elapsed="2.095444"/>
-</kw>
-<kw name="End web test" owner="Common" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-03T16:01:34.711735" elapsed="6.512189"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:34.711735" elapsed="6.512189"/>
-</kw>
-<tag>online</tag>
-<status status="PASS" start="2025-06-03T16:01:20.568858" elapsed="20.655066"/>
-</test>
-<test id="s1-t2" name="DeactivateComponentProtection" line="100">
-<kw name="Begin web test" owner="Common" type="SETUP">
-<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
-<arg>10s</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2025-06-03T16:01:41.223924" elapsed="0.000000"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:41.223924" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:01:41.223924" elapsed="2.938605"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-03T16:01:44.173048" elapsed="0.094739"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:41.223924" elapsed="3.043863"/>
-</kw>
-<kw name="Open" owner="GemPage">
-<kw name="Open" owner="LoginPage">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:44.271788" level="INFO">Opening url 'http://192.168.1.76:8888/gem'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:01:44.270785" elapsed="3.882400"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-06-03T16:01:44.269786" elapsed="3.883399"/>
-</kw>
-<arg>${URL}</arg>
-<status status="PASS" start="2025-06-03T16:01:44.268798" elapsed="3.884387"/>
-</kw>
-<kw name="Verify Page Loaded" owner="GemPage">
-<kw name="Verify Page Loaded_Gem" owner="LoginPage">
-<kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:48.166986" level="INFO">${Home_title} = Green Engineering Menu 6.1.6</msg>
-<var>${Home_title}</var>
-<doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-06-03T16:01:48.155184" elapsed="0.011802"/>
-</kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${Gem_title}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-03T16:01:48.166986" elapsed="0.015467"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:48.154183" elapsed="0.028270"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:48.154183" elapsed="0.029291"/>
-</kw>
-<kw name="LogintoGem" owner="GemPage">
-<kw name="Login" owner="LoginPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:48.186458" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
-<arg>${Button_Login}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:01:48.186458" elapsed="0.141194"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:48.185463" elapsed="0.142189"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:48.184456" elapsed="0.143196"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:49.332766" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:48.327652" elapsed="1.005114"/>
-</kw>
-<kw name="Open" owner="GemPage">
-<kw name="Open" owner="LoginPage">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:49.332766" level="INFO">Opening url 'http://192.168.1.76:8888/gem/mmx/connect/backendsettings'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:01:49.332766" elapsed="0.301533"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-06-03T16:01:49.332766" elapsed="0.301533"/>
-</kw>
-<arg>${URL_BackendSettings}</arg>
-<status status="PASS" start="2025-06-03T16:01:49.332766" elapsed="0.301533"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:51.648328" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:49.635352" elapsed="2.012976"/>
-</kw>
-<kw name="DeactivateComponentProtection" owner="GemPage">
-<kw name="DeactivateComponentProtection" owner="BackendSettings">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:51.648328" level="INFO">Clicking element 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; form:nth-child(6) &gt; div'.</msg>
-<arg>${component_protection_flipbutton}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:01:51.648328" elapsed="0.086647"/>
-</kw>
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:51.792977" level="INFO">${current_class} = ui-flipswitch ui-shadow-inset ui-bar-inherit ui-corner-all</msg>
-<var>${current_class}</var>
-<arg>${component_protection_flipbutton}</arg>
-<arg>class</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:01:51.734975" elapsed="0.058002"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:52.805916" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:51.792977" elapsed="1.012939"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>flip button value : ${current_class}</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Actual value of input: ${actual_status}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:55.622"/>
 </kw>
-<while condition="'${current_class}' != '${component_protection_off}'">
-<iter>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${component_protection_flipbutton}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${actual_status}" != "${expected_text}"</arg>
+<arg>Fail</arg>
+<arg>Expected "${expected_text}" but found "${actual_status}".</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:55.622"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
-</kw>
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<var>${current_class}</var>
-<arg>${component_protection_flipbutton}</arg>
-<arg>class</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Current class of the flip button: ${current_class}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>Flip button is successfully toggled</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Input value "${actual_status}" matches the expected text.</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
+<msg timestamp="20250627 15:41:55.622" level="INFO">Input value "not registered yet" matches the expected text.</msg>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:55.622"/>
 </kw>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
-</iter>
-<status status="NOT RUN" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
-</while>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-06-03T16:01:52.805916" level="INFO">Flip button is successfully toggled to the "off" state</msg>
-<arg>Flip button is successfully toggled to the "off" state</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-03T16:01:52.805916" elapsed="0.000000"/>
+<status status="PASS" starttime="20250627 15:41:55.586" endtime="20250627 15:41:55.622"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:51.648328" elapsed="1.157588"/>
+<status status="PASS" starttime="20250627 15:41:55.586" endtime="20250627 15:41:55.622"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:01:51.648328" elapsed="1.157588"/>
+<msg timestamp="20250627 15:41:55.622" level="INFO">${car_status} = True</msg>
+<status status="PASS" starttime="20250627 15:41:55.586" endtime="20250627 15:41:55.622"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:54.820693" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:52.805916" elapsed="2.014777"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${car_status}</arg>
+<arg>Fail</arg>
+<arg>Car registration status verification failed.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:55.622"/>
 </kw>
-<kw name="sync_page" owner="GemPage">
-<kw name="Page_sync" owner="ConfigPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:01:54.820693" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup &gt; div &gt; ul &gt; li.ui-block-c &gt; button'.</msg>
-<arg>${Refresh_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:01:54.820693" elapsed="0.141610"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:01:55.973713" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:54.962303" elapsed="1.011410"/>
-</kw>
-<doc>Verify that the configuration page is loaded by checking the title and URL.</doc>
-<status status="PASS" start="2025-06-03T16:01:54.820693" elapsed="1.153020"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:01:54.820693" elapsed="1.153020"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:02:55.978196" level="INFO">Slept 1 minute.</msg>
-<arg>60s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:01:55.973713" elapsed="60.004483"/>
-</kw>
-<kw name="VerifyODP_EU_Approval" owner="GemPage">
-<kw name="Verify_ODP_EU_Approval" owner="BackendSettings">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:06.288731" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-03T16:03:06.288731" level="FAIL">Text 'ODPApproval_locator' did not appear in 10 seconds.</msg>
-<arg>ODPApproval_locator</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="FAIL" start="2025-06-03T16:02:55.978196" elapsed="10.326184">Text 'ODPApproval_locator' did not appear in 10 seconds.</status>
-</kw>
-<status status="FAIL" start="2025-06-03T16:02:55.978196" elapsed="10.326184">Text 'ODPApproval_locator' did not appear in 10 seconds.</status>
-</kw>
-<status status="FAIL" start="2025-06-03T16:02:55.978196" elapsed="10.326184">Text 'ODPApproval_locator' did not appear in 10 seconds.</status>
-</kw>
-<kw name="End web test" owner="Common" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-03T16:03:06.304380" elapsed="6.550237"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:03:06.304380" elapsed="6.550237"/>
-</kw>
-<tag>online</tag>
-<status status="FAIL" start="2025-06-03T16:01:41.223924" elapsed="91.630693">Text 'ODPApproval_locator' did not appear in 10 seconds.</status>
-</test>
-<test id="s1-t3" name="ResetWithPersistance" line="115">
-<kw name="Begin web test" owner="Common" type="SETUP">
-<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
-<arg>10s</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2025-06-03T16:03:12.854617" elapsed="0.000000"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:12.854617" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:03:12.854617" elapsed="3.093104"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-03T16:03:15.947721" elapsed="0.068531"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:03:12.854617" elapsed="3.161635"/>
-</kw>
-<kw name="Open" owner="GemPage">
-<kw name="Open" owner="LoginPage">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:16.034069" level="INFO">Opening url 'http://192.168.1.76:8888/gem'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:03:16.031883" elapsed="3.635995"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-06-03T16:03:16.031883" elapsed="3.635995"/>
-</kw>
-<arg>${URL}</arg>
-<status status="PASS" start="2025-06-03T16:03:16.016252" elapsed="3.652627"/>
-</kw>
-<kw name="Verify Page Loaded" owner="GemPage">
-<kw name="Verify Page Loaded_Gem" owner="LoginPage">
-<kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:19.681545" level="INFO">${Home_title} = Green Engineering Menu 6.1.6</msg>
-<var>${Home_title}</var>
-<doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-06-03T16:03:19.669875" elapsed="0.011670"/>
-</kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${Gem_title}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-03T16:03:19.681545" elapsed="0.009538"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:03:19.669875" elapsed="0.021208"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:03:19.668879" elapsed="0.022204"/>
-</kw>
-<kw name="LogintoGem" owner="GemPage">
-<kw name="Login" owner="LoginPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:19.691083" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
-<arg>${Button_Login}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:03:19.691083" elapsed="0.152776"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:03:19.691083" elapsed="0.152776"/>
-</kw>
-<status status="PASS" start="2025-06-03T16:03:19.691083" elapsed="0.152776"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:03:20.846940" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:03:19.843859" elapsed="1.003081"/>
-</kw>
-<kw name="Open" owner="GemPage">
-<kw name="Open" owner="LoginPage">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:20.846940" level="INFO">Opening url 'http://192.168.1.76:8888/gem/debugging'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-03T16:03:20.846940" elapsed="0.289253"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-06-03T16:03:20.846940" elapsed="0.289253"/>
-</kw>
-<arg>${URL_Request_Reset_with_persistance}</arg>
-<status status="PASS" start="2025-06-03T16:03:20.846940" elapsed="0.289253"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:03:22.150440" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:03:21.137188" elapsed="1.013252"/>
-</kw>
-<kw name="InitiateResetWithPersistance" owner="GemPage">
-<kw name="ActiveResetWithPersistance" owner="debugging">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${Verify_page_loaded}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-03T16:03:22.150440" elapsed="0.006510"/>
-</kw>
-<kw name="Scroll To Bottom" owner="debugging">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:22.166460" level="INFO">Executing JavaScript:
-return document.documentElement.scrollHeight
-Without any arguments.</msg>
-<msg time="2025-06-03T16:03:22.166460" level="INFO">${last_height} = 1284</msg>
+<kw name="Scroll To Bottom" library="Debugging">
+<kw name="Execute Javascript" library="SeleniumLibrary">
 <var>${last_height}</var>
 <arg>return document.documentElement.scrollHeight</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-06-03T16:03:22.166460" elapsed="0.000000"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:22.166460" level="INFO">Executing JavaScript:
-window.scrollTo(0, document.documentElement.scrollHeight)
-Without any arguments.</msg>
-<arg>window.scrollTo(0, document.documentElement.scrollHeight)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-06-03T16:03:22.166460" elapsed="0.011201"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:03:24.182620" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:03:22.177661" elapsed="2.004959"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:24.182620" level="INFO">Executing JavaScript:
+<msg timestamp="20250627 15:41:55.622" level="INFO">Executing JavaScript:
 return document.documentElement.scrollHeight
 Without any arguments.</msg>
-<msg time="2025-06-03T16:03:24.182620" level="INFO">${new_height} = 1284</msg>
+<msg timestamp="20250627 15:41:55.622" level="INFO">${last_height} = 1806</msg>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:55.622"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>20</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.documentElement.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250627 15:41:55.622" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.documentElement.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:55.639"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250627 15:41:57.639" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250627 15:41:55.639" endtime="20250627 15:41:57.639"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
 <var>${new_height}</var>
 <arg>return document.documentElement.scrollHeight</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-06-03T16:03:24.182620" elapsed="0.000000"/>
+<msg timestamp="20250627 15:41:57.639" level="INFO">Executing JavaScript:
+return document.documentElement.scrollHeight
+Without any arguments.</msg>
+<msg timestamp="20250627 15:41:57.645" level="INFO">${new_height} = 1806</msg>
+<status status="PASS" starttime="20250627 15:41:57.639" endtime="20250627 15:41:57.645"/>
 </kw>
-<kw name="Exit For Loop If" owner="BuiltIn">
-<msg time="2025-06-03T16:03:24.182620" level="INFO">Exiting for loop altogether.</msg>
+<kw name="Exit For Loop If" library="BuiltIn">
 <arg>${new_height} == ${last_height}</arg>
 <doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
-<status status="PASS" start="2025-06-03T16:03:24.182620" elapsed="0.000000"/>
+<msg timestamp="20250627 15:41:57.645" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20250627 15:41:57.645" endtime="20250627 15:41:57.645"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
+<kw name="Set Variable" library="BuiltIn">
 <var>${last_height}</var>
 <arg>${new_height}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-06-03T16:03:24.182620" elapsed="0.000000"/>
+<status status="NOT RUN" starttime="20250627 15:41:57.645" endtime="20250627 15:41:57.645"/>
 </kw>
-<var name="${index}">0</var>
-<status status="PASS" start="2025-06-03T16:03:22.166460" elapsed="2.016160"/>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:57.645"/>
 </iter>
-<var>${index}</var>
-<value>20</value>
-<status status="PASS" start="2025-06-03T16:03:22.166460" elapsed="2.016160"/>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:57.645"/>
 </for>
-<status status="PASS" start="2025-06-03T16:03:22.156950" elapsed="2.025670"/>
+<status status="PASS" starttime="20250627 15:41:55.622" endtime="20250627 15:41:57.645"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:03:26.198011" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:03:24.182620" elapsed="2.015391"/>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${service_state}</var>
+<arg>GemPage.Verify ServiceListState</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verify ServiceListState" library="GemPage">
+<kw name="VerifyServiceList" library="Connect">
+<arg>${Connect_ServiceListState}</arg>
+<arg>${Connect_ServiceList_True}</arg>
+<doc>Verify the service list on the page by checking the value of the input tag matches the expected text.</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_service_list}</var>
+<arg>${input_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250627 15:41:57.661" level="INFO">${actual_service_list} = false</msg>
+<status status="PASS" starttime="20250627 15:41:57.645" endtime="20250627 15:41:57.661"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:26.198011" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-footer-fixed.ui-page-active &gt; div.ui-content &gt; button:nth-child(17)'.</msg>
-<arg>${css_reset}</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Actual value of input: ${actual_service_list}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.661"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${actual_service_list}" != "${expected_text}"</arg>
+<arg>Fail</arg>
+<arg>Expected "${expected_text}" but found "${actual_service_list}".</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.661"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Input value "${actual_service_list}" matches the expected text.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250627 15:41:57.661" level="INFO">Input value "false" matches the expected text.</msg>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.661"/>
+</kw>
+<status status="PASS" starttime="20250627 15:41:57.645" endtime="20250627 15:41:57.661"/>
+</kw>
+<status status="PASS" starttime="20250627 15:41:57.645" endtime="20250627 15:41:57.661"/>
+</kw>
+<msg timestamp="20250627 15:41:57.661" level="INFO">${service_state} = True</msg>
+<status status="PASS" starttime="20250627 15:41:57.645" endtime="20250627 15:41:57.661"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${service_state}</arg>
+<arg>Fail</arg>
+<arg>Service list state verification failed.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.661"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${service_update}</var>
+<arg>GemPage.Verify ServiceListUpdateStatus</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Verify ServiceListUpdateStatus" library="GemPage">
+<kw name="ServicelistUptodate" library="Connect">
+<arg>${Connect_ServiceList_update}</arg>
+<arg>${Connect_ServiceList_True}</arg>
+<doc>Verify the service list is up to date by checking the value of the input tag matches the expected text.</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_service_uptodate}</var>
+<arg>${input_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250627 15:41:57.692" level="INFO">${actual_service_uptodate} = false</msg>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.692"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Actual value of input: ${actual_service_uptodate}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:41:57.692"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${actual_service_uptodate}" != "${expected_text}"</arg>
+<arg>Fail</arg>
+<arg>Expected "${expected_text}" but found "${actual_service_uptodate}".</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:41:57.692"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Input value "${actual_service_uptodate}" matches the expected text.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250627 15:41:57.692" level="INFO">Input value "false" matches the expected text.</msg>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:41:57.692"/>
+</kw>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.692"/>
+</kw>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.692"/>
+</kw>
+<msg timestamp="20250627 15:41:57.692" level="INFO">${service_update} = True</msg>
+<status status="PASS" starttime="20250627 15:41:57.661" endtime="20250627 15:41:57.692"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${service_update}</arg>
+<arg>Fail</arg>
+<arg>Service list update status verification failed.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:41:57.692"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${all_checks_passed}</var>
+<arg>${car_status} and ${service_state} and ${service_update}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20250627 15:41:57.692" level="INFO">${all_checks_passed} = True</msg>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:41:57.692"/>
+</kw>
+<msg timestamp="20250627 15:41:57.692" level="INFO">${all_checks_passed} = True</msg>
+<status status="PASS" starttime="20250627 15:41:55.586" endtime="20250627 15:41:57.692"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${all_checks_passed}</arg>
+<arg>${all_checks_passed}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20250627 15:41:57.692" level="INFO">${all_checks_passed} = True</msg>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:41:57.692"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:42:05.682"/>
+</kw>
+<status status="PASS" starttime="20250627 15:41:57.692" endtime="20250627 15:42:05.682"/>
+</kw>
+<doc>This test case verifies the backend registration status.</doc>
+<tag>connect</tag>
+<status status="PASS" starttime="20250627 15:41:43.051" endtime="20250627 15:42:05.682"/>
+</test>
+<test id="s1-t2" name="ResetWithPersistance" line="127">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20250627 15:42:05.682" endtime="20250627 15:42:05.682"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250627 15:42:05.682" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20250627 15:42:05.682" endtime="20250627 15:42:08.251"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250627 15:42:08.251" endtime="20250627 15:42:08.296"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:05.682" endtime="20250627 15:42:08.296"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${all_checks_passed}</arg>
+<arg>GemPage.ResetWithPersistanceSteps</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="ResetWithPersistanceSteps" library="GemPage">
+<kw name="Open" library="GemPage">
+<arg>${URL}</arg>
+<kw name="Open" library="LoginPage">
+<arg>${url}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20250627 15:42:08.296" level="INFO">Opening url 'http://10.94.98.42:8888/gem'</msg>
+<status status="PASS" starttime="20250627 15:42:08.296" endtime="20250627 15:42:11.905"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:08.296" endtime="20250627 15:42:11.906"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:08.296" endtime="20250627 15:42:11.906"/>
+</kw>
+<kw name="Verify Page Loaded" library="GemPage">
+<kw name="Verify Page Loaded_Gem" library="LoginPage">
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${Home_title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20250627 15:42:11.916" level="INFO">${Home_title} = Green Engineering Menu 6.1.6</msg>
+<status status="PASS" starttime="20250627 15:42:11.906" endtime="20250627 15:42:11.916"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${LoginPage_Gem_title}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20250627 15:42:11.916" endtime="20250627 15:42:11.928"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:11.906" endtime="20250627 15:42:11.928"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:11.906" endtime="20250627 15:42:11.928"/>
+</kw>
+<kw name="LogintoGem" library="GemPage">
+<kw name="Login" library="LoginPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LoginPage_Button_Login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:03:26.198011" elapsed="0.123195"/>
+<msg timestamp="20250627 15:42:11.929" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-content &gt; button'.</msg>
+<status status="PASS" starttime="20250627 15:42:11.929" endtime="20250627 15:42:12.047"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:03:22.150440" elapsed="4.170766"/>
+<status status="PASS" starttime="20250627 15:42:11.929" endtime="20250627 15:42:12.047"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:03:22.150440" elapsed="4.170766"/>
+<status status="PASS" starttime="20250627 15:42:11.928" endtime="20250627 15:42:12.047"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:03:28.323630" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:03:26.321206" elapsed="2.002424"/>
-</kw>
-<kw name="sync_page" owner="GemPage">
-<kw name="Page_sync" owner="ConfigPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-03T16:03:28.323630" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup &gt; div &gt; ul &gt; li.ui-block-c &gt; button'.</msg>
-<arg>${Refresh_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-03T16:03:28.323630" elapsed="0.288700"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:03:29.617331" level="INFO">Slept 1 second.</msg>
+<kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:03:28.612330" elapsed="1.005001"/>
+<msg timestamp="20250627 15:42:13.048" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250627 15:42:12.047" endtime="20250627 15:42:13.048"/>
 </kw>
+<kw name="Open" library="GemPage">
+<arg>${URL_Request_Reset_with_persistance}</arg>
+<kw name="Open" library="LoginPage">
+<arg>${url}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20250627 15:42:13.048" level="INFO">Opening url 'http://10.94.98.42:8888/gem/debugging'</msg>
+<status status="PASS" starttime="20250627 15:42:13.048" endtime="20250627 15:42:13.308"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:13.048" endtime="20250627 15:42:13.308"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:13.048" endtime="20250627 15:42:13.308"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250627 15:42:14.309" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250627 15:42:13.308" endtime="20250627 15:42:14.309"/>
+</kw>
+<kw name="InitiateResetWithPersistance" library="GemPage">
+<kw name="ActiveResetWithPersistance" library="Debugging">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Debugging_Verify_page_loaded}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20250627 15:42:14.309" endtime="20250627 15:42:14.319"/>
+</kw>
+<kw name="Scroll To Bottom" library="Debugging">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${last_height}</var>
+<arg>return document.documentElement.scrollHeight</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250627 15:42:14.319" level="INFO">Executing JavaScript:
+return document.documentElement.scrollHeight
+Without any arguments.</msg>
+<msg timestamp="20250627 15:42:14.334" level="INFO">${last_height} = 1284</msg>
+<status status="PASS" starttime="20250627 15:42:14.319" endtime="20250627 15:42:14.334"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>20</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.documentElement.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250627 15:42:14.334" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.documentElement.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20250627 15:42:14.334" endtime="20250627 15:42:14.342"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250627 15:42:16.342" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250627 15:42:14.342" endtime="20250627 15:42:16.342"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${new_height}</var>
+<arg>return document.documentElement.scrollHeight</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250627 15:42:16.342" level="INFO">Executing JavaScript:
+return document.documentElement.scrollHeight
+Without any arguments.</msg>
+<msg timestamp="20250627 15:42:16.342" level="INFO">${new_height} = 1284</msg>
+<status status="PASS" starttime="20250627 15:42:16.342" endtime="20250627 15:42:16.342"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${new_height} == ${last_height}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20250627 15:42:16.342" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20250627 15:42:16.342" endtime="20250627 15:42:16.342"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${last_height}</var>
+<arg>${new_height}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20250627 15:42:16.342" endtime="20250627 15:42:16.342"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:14.334" endtime="20250627 15:42:16.342"/>
+</iter>
+<status status="PASS" starttime="20250627 15:42:14.334" endtime="20250627 15:42:16.342"/>
+</for>
+<status status="PASS" starttime="20250627 15:42:14.319" endtime="20250627 15:42:16.342"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250627 15:42:18.343" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250627 15:42:16.342" endtime="20250627 15:42:18.343"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Debugging_css_reset}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250627 15:42:18.343" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-footer-fixed.ui-page-active &gt; div.ui-content &gt; button:nth-child(17)'.</msg>
+<status status="PASS" starttime="20250627 15:42:18.343" endtime="20250627 15:42:18.449"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:14.309" endtime="20250627 15:42:18.449"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:14.309" endtime="20250627 15:42:18.449"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250627 15:42:20.451" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250627 15:42:18.449" endtime="20250627 15:42:20.451"/>
+</kw>
+<kw name="sync_page" library="GemPage">
+<kw name="Page_sync" library="ConfigPage">
 <doc>Verify that the configuration page is loaded by checking the title and URL.</doc>
-<status status="PASS" start="2025-06-03T16:03:28.323630" elapsed="1.293701"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${ConfigPage_Refresh_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250627 15:42:20.451" level="INFO">Clicking button 'css=body &gt; div.ui-page.ui-page-theme-a.ui-page-active &gt; div.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup &gt; div &gt; ul &gt; li.ui-block-c &gt; button'.</msg>
+<status status="PASS" starttime="20250627 15:42:20.451" endtime="20250627 15:42:20.576"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:03:28.323630" elapsed="1.293701"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250627 15:42:21.576" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250627 15:42:20.576" endtime="20250627 15:42:21.576"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-03T16:04:59.619396" level="INFO">Slept 1 minute 30 seconds.</msg>
+<status status="PASS" starttime="20250627 15:42:20.451" endtime="20250627 15:42:21.576"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:20.451" endtime="20250627 15:42:21.576"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
 <arg>90s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-03T16:03:29.617331" elapsed="90.002065"/>
+<msg timestamp="20250627 15:43:51.579" level="INFO">Slept 1 minute 30 seconds</msg>
+<status status="PASS" starttime="20250627 15:42:21.576" endtime="20250627 15:43:51.579"/>
 </kw>
-<kw name="End web test" owner="Common" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
+<status status="PASS" starttime="20250627 15:42:08.296" endtime="20250627 15:43:51.579"/>
+</kw>
+<status status="PASS" starttime="20250627 15:42:08.296" endtime="20250627 15:43:51.579"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-03T16:04:59.619396" elapsed="6.550204"/>
+<status status="PASS" starttime="20250627 15:43:51.579" endtime="20250627 15:43:57.920"/>
 </kw>
-<status status="PASS" start="2025-06-03T16:04:59.619396" elapsed="6.550204"/>
+<status status="PASS" starttime="20250627 15:43:51.579" endtime="20250627 15:43:57.920"/>
 </kw>
-<tag>online</tag>
-<status status="PASS" start="2025-06-03T16:03:12.854617" elapsed="113.314983"/>
+<tag>connect</tag>
+<status status="PASS" starttime="20250627 15:42:05.682" endtime="20250627 15:43:57.920"/>
 </test>
-<status status="FAIL" start="2025-06-03T16:01:20.227208" elapsed="225.942392"/>
+<status status="PASS" starttime="20250627 15:41:42.769" endtime="20250627 15:43:57.920"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="1" skip="0">online</stat>
+<stat pass="2" fail="0" skip="0">connect</stat>
 </tag>
 <suite>
-<stat pass="2" fail="1" skip="0" id="s1" name="GemTestSuite">GemTestSuite</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="GemTestSuite">GemTestSuite</stat>
 </suite>
 </statistics>
 <errors>

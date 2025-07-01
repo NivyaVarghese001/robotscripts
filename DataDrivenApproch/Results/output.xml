@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.5 on win32)" generated="20250610 10:55:48.486" rpa="false" schemaversion="3">
+<suite id="s1" name="Cars" source="C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot">
+<test id="s1-t1" name="Invalid login scenarios should display correct error messages" line="23">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250610 10:55:48.768" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20250610 10:55:48.768" endtime="20250610 10:55:51.635"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:48.768" endtime="20250610 10:55:51.635"/>
+</kw>
+<kw name="Test Multiple Login Scenarios" library="CarsApp">
+<arg>${UNREGISTERED_USER}</arg>
+<kw name="Navigate to Sign In Page" library="CarsApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Catenate" library="BuiltIn">
+<var>${SignInUrl}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20250610 10:55:51.651" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20250610 10:55:51.649" endtime="20250610 10:55:51.651"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${SignInUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20250610 10:55:51.652" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20250610 10:55:51.652" endtime="20250610 10:55:57.095"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:51.649" endtime="20250610 10:55:57.095"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:51.648" endtime="20250610 10:55:57.096"/>
+</kw>
+<kw name="Attempt Login" library="CarsApp">
+<arg>${Credentials}</arg>
+<kw name="Enter Credentials" library="SignIn">
+<arg>${Credentials}</arg>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<msg timestamp="20250610 10:55:57.098" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250610 10:55:57.103" level="INFO">Typing text 'someone@notregistered.com' into text field 'xpath=//cui-input[@options='email']/div/input'.</msg>
+<msg timestamp="20250610 10:55:57.293" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250610 10:55:57.293" level="FAIL">Element with locator 'xpath=//cui-input[@options='email']/div/input' not found.</msg>
+<status status="FAIL" starttime="20250610 10:55:57.100" endtime="20250610 10:55:57.302"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:57.098" endtime="20250610 10:55:57.302"/>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<msg timestamp="20250610 10:55:57.302" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<status status="NOT RUN" starttime="20250610 10:55:57.302" endtime="20250610 10:55:57.302"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:57.097" endtime="20250610 10:55:57.303"/>
+</kw>
+<kw name="Click Submit" library="SignIn">
+<status status="NOT RUN" starttime="20250610 10:55:57.303" endtime="20250610 10:55:57.303"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20250610 10:55:57.303" endtime="20250610 10:55:57.303"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:57.096" endtime="20250610 10:55:57.303"/>
+</kw>
+<kw name="Verify Login Page Error Message" library="CarsApp">
+<arg>${Credentials.ExpectedErrorMessage}</arg>
+<status status="NOT RUN" starttime="20250610 10:55:57.303" endtime="20250610 10:55:57.303"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:51.648" endtime="20250610 10:55:57.303"/>
+</kw>
+<kw name="Test Multiple Login Scenarios" library="CarsApp">
+<arg>${INVALID_PASSWORD_USER}</arg>
+<kw name="Navigate to Sign In Page" library="CarsApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Catenate" library="BuiltIn">
+<var>${SignInUrl}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20250610 10:55:57.304" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20250610 10:55:57.304" endtime="20250610 10:55:57.304"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${SignInUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20250610 10:55:57.305" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20250610 10:55:57.305" endtime="20250610 10:55:58.487"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:57.304" endtime="20250610 10:55:58.488"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:57.304" endtime="20250610 10:55:58.488"/>
+</kw>
+<kw name="Attempt Login" library="CarsApp">
+<arg>${Credentials}</arg>
+<kw name="Enter Credentials" library="SignIn">
+<arg>${Credentials}</arg>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<msg timestamp="20250610 10:55:58.489" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250610 10:55:58.494" level="INFO">Typing text 'someone@registereduser.com' into text field 'xpath=//cui-input[@options='email']/div/input'.</msg>
+<msg timestamp="20250610 10:55:58.710" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250610 10:55:58.710" level="FAIL">Element with locator 'xpath=//cui-input[@options='email']/div/input' not found.</msg>
+<status status="FAIL" starttime="20250610 10:55:58.492" endtime="20250610 10:55:58.712"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:58.489" endtime="20250610 10:55:58.712"/>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<msg timestamp="20250610 10:55:58.712" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<status status="NOT RUN" starttime="20250610 10:55:58.712" endtime="20250610 10:55:58.713"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:58.489" endtime="20250610 10:55:58.714"/>
+</kw>
+<kw name="Click Submit" library="SignIn">
+<status status="NOT RUN" starttime="20250610 10:55:58.714" endtime="20250610 10:55:58.714"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20250610 10:55:58.715" endtime="20250610 10:55:58.715"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:58.488" endtime="20250610 10:55:58.715"/>
+</kw>
+<kw name="Verify Login Page Error Message" library="CarsApp">
+<arg>${Credentials.ExpectedErrorMessage}</arg>
+<status status="NOT RUN" starttime="20250610 10:55:58.715" endtime="20250610 10:55:58.715"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:57.303" endtime="20250610 10:55:58.715"/>
+</kw>
+<kw name="Test Multiple Login Scenarios" library="CarsApp">
+<arg>${BLANK_CREDENTIALS_USER}</arg>
+<kw name="Navigate to Sign In Page" library="CarsApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Catenate" library="BuiltIn">
+<var>${SignInUrl}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<arg>${LOGIN_URL}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20250610 10:55:58.718" level="INFO">${SignInUrl} = https://www.cars.com//profile/secure/login</msg>
+<status status="PASS" starttime="20250610 10:55:58.717" endtime="20250610 10:55:58.718"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${SignInUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20250610 10:55:58.719" level="INFO">Opening url 'https://www.cars.com//profile/secure/login'</msg>
+<status status="PASS" starttime="20250610 10:55:58.718" endtime="20250610 10:55:59.812"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:58.717" endtime="20250610 10:55:59.812"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:58.716" endtime="20250610 10:55:59.812"/>
+</kw>
+<kw name="Attempt Login" library="CarsApp">
+<arg>${Credentials}</arg>
+<kw name="Enter Credentials" library="SignIn">
+<arg>${Credentials}</arg>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<msg timestamp="20250610 10:55:59.813" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<status status="PASS" starttime="20250610 10:55:59.813" endtime="20250610 10:55:59.815"/>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<msg timestamp="20250610 10:55:59.816" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<status status="PASS" starttime="20250610 10:55:59.816" endtime="20250610 10:55:59.818"/>
+</kw>
+<status status="PASS" starttime="20250610 10:55:59.813" endtime="20250610 10:55:59.818"/>
+</kw>
+<kw name="Click Submit" library="SignIn">
+<kw name="Click Button" library="Selenium2Library">
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250610 10:55:59.819" level="INFO">Clicking button 'xpath=//button[@name='&amp;lid=Log In']'.</msg>
+<msg timestamp="20250610 10:56:00.050" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250610 10:56:00.050" level="FAIL">Button with locator 'xpath=//button[@name='&amp;lid=Log In']' not found.</msg>
+<status status="FAIL" starttime="20250610 10:55:59.818" endtime="20250610 10:56:00.054"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:59.818" endtime="20250610 10:56:00.054"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20250610 10:56:00.054" endtime="20250610 10:56:00.054"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:59.812" endtime="20250610 10:56:00.054"/>
+</kw>
+<kw name="Verify Login Page Error Message" library="CarsApp">
+<arg>${Credentials.ExpectedErrorMessage}</arg>
+<status status="NOT RUN" starttime="20250610 10:56:00.055" endtime="20250610 10:56:00.055"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:58.716" endtime="20250610 10:56:00.055"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250610 10:56:00.056" endtime="20250610 10:56:06.569"/>
+</kw>
+<status status="PASS" starttime="20250610 10:56:00.055" endtime="20250610 10:56:06.570"/>
+</kw>
+<status status="FAIL" starttime="20250610 10:55:48.766" endtime="20250610 10:56:06.570">Several failures occurred:
+
+1) Element with locator 'xpath=//cui-input[@options='email']/div/input' not found.
+
+2) Element with locator 'xpath=//cui-input[@options='email']/div/input' not found.
+
+3) Button with locator 'xpath=//button[@name='&amp;lid=Log In']' not found.</status>
+</test>
+<doc>Demonstrate a need for data-driven testing</doc>
+<status status="FAIL" starttime="20250610 10:55:48.488" endtime="20250610 10:56:06.572"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Cars">Cars</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250610 10:55:48.476" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 3: Setting 'Documentation' is allowed only once. Only the first value is used.</msg>
+<msg timestamp="20250610 10:55:48.476" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 4: Non-existing setting 'a [Template] setting is used to define a test case template that allows you to reuse the same test steps with different sets of data.'.</msg>
+<msg timestamp="20250610 10:55:48.477" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 5: Non-existing setting 'It simplifies data-driven testing by associating a template keyword with multiple arguments, which are passed as test data.'.</msg>
+<msg timestamp="20250610 10:55:48.478" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 6: Non-existing setting 'In the provided code, the [Template] setting is used in the test case Invalid login scenarios should display correct error messages.'.</msg>
+<msg timestamp="20250610 10:55:48.478" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 7: Non-existing setting 'The keyword Test Multiple Login Scenarios acts as the template, and'.</msg>
+<msg timestamp="20250610 10:55:48.479" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 8: Non-existing setting 'the arguments (${UNREGISTERED_USER}, ${INVALID_PASSWORD_USER}, ${BLANK_CREDENTIALS_USER}) are'.</msg>
+<msg timestamp="20250610 10:55:48.479" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 9: Non-existing setting 'the data sets that will be passed to the template keyword during execution.'.</msg>
+<msg timestamp="20250610 10:55:48.479" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 10: Non-existing setting 'This means the test case will execute the Test Multiple Login Scenarios keyword three times,'.</msg>
+<msg timestamp="20250610 10:55:48.480" level="ERROR">Error in file 'C:\PycharmProjects\robot-scripts\DataDrivenApproch\tests\Cars.robot' on line 11: Non-existing setting 'once for each argument, allowing you to test different login scenarios without duplicating the test steps.'.</msg>
+<msg timestamp="20250610 10:55:57.098" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg timestamp="20250610 10:55:57.302" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg timestamp="20250610 10:55:58.489" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg timestamp="20250610 10:55:58.712" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg timestamp="20250610 10:55:59.813" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg timestamp="20250610 10:55:59.816" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+</errors>
+</robot>
