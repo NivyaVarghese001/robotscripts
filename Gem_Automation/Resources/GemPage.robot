@@ -68,6 +68,7 @@ VerifyBackendChecks
     [Documentation]    Perform all backend checks and return combined result.
     ${car_status}=    Run Keyword And Return Status    GemPage.Verify car_registrationstatus
     Run Keyword If    not ${car_status}    Fail    Car registration status verification failed.
+    sleep    5s
     debugging.scroll to bottom
     ${service_state}=    Run Keyword And Return Status    GemPage.Verify ServiceListState
     Run Keyword If    not ${service_state}    Fail    Service list state verification failed.

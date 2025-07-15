@@ -8,8 +8,8 @@ ${backendSettings_audibackend_active}                   xpath=//div[@data-role='
 ${backendSettings_elemement_verify}                     css=body > div.ui-page.ui-page-theme-a.ui-page-active > div.ui-content > div:nth-child(2) > label
 ${backendSettings_ODPApproval_locator}                  xpath=/html/body/div[1]/div[2]/div[2]/div/input
 ${backendSettings_ODPApproval_text}                     ODP APPROVAL EU
-${backendSettings_Current_EsoServer}                   css=div.ui-content > div:nth-child(13) > div
-${backendSettings_Current_Realm}                       css=div.ui-content > div:nth-child(15) > div
+${backendSettings_Current_EsoServer}                   css=div.ui-content > div:nth-child(13) > div > input
+${backendSettings_Current_Realm}                       css=div.ui-content > div:nth-child(15) > div > input
 ${Connect_RegistarionStatus}                            css=div:nth-child(2) > table > tbody:nth-child(3) > tr:nth-child(4) > td:nth-child(2)
 ${Connect_ServiceListState}                             css=div:nth-child(4) > table > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)
 ${Connect_ServiceList_update}                          css= div:nth-child(4) > table > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)
@@ -38,5 +38,7 @@ ${URL_NAV_CACHE}                                        ${BASE_URL}/gem/mmx/navi
 ${URL_BackendSettings}                                  ${BASE_URL}/gem/mmx/connect/backendsettings
 ${URL_Request_Reset_with_persistance}                   ${BASE_URL}/gem/debugging
 ${URL_Connect}                                          ${BASE_URL}/gem/mmx/connect
+${USER_NAME}                                            root
+${PASSWORD}
 
 

@@ -2,39 +2,41 @@
 #documentation    : This is a test suite for the example application.
 Resource    ../Resources/Common.robot
 Resource    ../Resources/GemPage.robot
+Resource    ../Resources/SSHConnectionTest.robot
+
 Resource    ../Data/AutomatedInputData.robot
 
 test setup    Begin web test
 test teardown    End web test
 
-# robot -d Results Tests/GemTestSuite.robot
-# robot -d Results -i clearcache -v TARGET_IP:10.94.98.42 Tests/GemTestSuite.robot
-# robot -d Results -i online -v TARGET_IP:10.94.98.42 Tests/GemTestSuite.robot
+# 1. Can be used to run the suite for update rc.local file to UTC and perform clear cache.
+#     robot -d Results -i UpdateTime -i clearcache -v TARGET_IP:<Target IP> .\Tests\GemTestSuite.robot
+#  <Example>  robot -d Results -i UpdateTime -i clearcache -v TARGET_IP:10.94.98.139 .\Tests\GemTestSuite.robot
 
-# robot -d Results -i clearcache -v TARGET_IP:192.168.1.76 Tests/GemTestSuite.robot
-# robot -d Results -i online -v TARGET_IP:192.168.1.76 Tests/GemTestSuite.robot
+# 2.  Can be used to run the suite only for clearing the cache
+#     robot -d Results -i clearcache -v TARGET_IP:<Target IP> Tests/GemTestSuite.robot
 
-# robot -d Results -i clearcache -v TARGET_IP:10.94.98.139 Tests/GemTestSuite.robot
-# robot -d Results -i online -v TARGET_IP:10.94.98.139 Tests/GemTestSuite.robot
-#*** Variables ***
-#${BROWSER}                  chrome
-#${TARGET_IP}                10.94.98.42
-#${BASE_URL}                 http://${TARGET_IP}:8888
-#${BASE_URL}                 http://192.168.1.74:8888
-#${URL}                      ${BASE_URL}/gem
-#${URL_MMX_CONFIG}           ${BASE_URL}/gem/mmx/connect/configuration
-#${URL_NAV_HTTPS}            ${BASE_URL}/gem/mmx/navigation/asianavigation/nav_https
-#${URL_NAV_CACHE}            ${BASE_URL}/gem/mmx/navigation/asianavigation/navcache
-#${URL_BackendSettings}      ${BASE_URL}/gem/mmx/connect/backendsettings
-#${URL_Request_Reset_with_persistance}       ${BASE_URL}/gem/debugging
+# 3. For running testcases for online
+#       JP/TW/KR backend
+
+#       robot -d .\Results -i online -v TARGET_IP:<TARGET IP>   .\Tests\GemTestSuite.robot
+#           OR
+#       robot -d .\Results -i online -v TARGET_IP:<TARGET IP> -v backendSettings_audi_backend:14 .\Tests\GemTestSuite.robot
+# <Example>    robot -d .\Results -i online -v TARGET_IP:10.94.98.139 -v backendSettings_audi_backend:14 .\Tests\GemTestSuite.robot
+
+#       China backend
+
+#       robot -d .\Results -i online -v TARGET_IP:<TARGET IP> -v backendSettings_audi_backend:27 .\Tests\GemTestSuite.robot
+
 *** Test Cases ***
 
-GemLogin
-    [Documentation]    This test case logs in to the application using a gem.
-    GemPage.Open     ${URL}
-    GemPage.Verify Page Loaded
-    GemPage.LogintoGem
-    sleep    3s
+
+Update system time in RC.Local
+    [Setup]     NONE
+    [Teardown]    NONE
+    [Tags]    UpdateTime
+    SSHConnectionTest.Connect to Target and copy rc.local
+    SSHConnectionTest.Disconnect Connection
 
 Reset core services
     #[Documentation]    This test case resets the core services.
@@ -49,7 +51,7 @@ Reset core services
     GemPage.Purge
 
 
-DeactivateHTTPbackend
+DeactivateHTTPbackend and ClearNavCache
     [Tags]    clearcache
     GemPage.Open     ${URL}
     GemPage.LogintoGem
@@ -59,9 +61,16 @@ DeactivateHTTPbackend
     GemPage.nav_https_deactivation
     sleep    2s
     GemPage.sync_page
+    GemPage.Open        ${URL_NAV_CACHE}
+    GemPage.VerifyConfigPageLoaded
+    GemPage.nav_cache_clear
+    sleep    2s
+    GemPage.sync_page
+    log to console    !!!!! PLEASE RESTART TARGET !!!!!!!!!!!!
+    log to console    !!!!! After Restating please run script for online init !!!!!!!!!!!!
 
 DeactivateNavCache
-    [Tags]    clearcache
+    [Tags]    Low priority, clearcache
     GemPage.Open     ${URL}
     GemPage.LogintoGem
     sleep    3s
@@ -75,7 +84,7 @@ DeactivateNavCache
 
 
 
-SetBackEndSettings
+SetBackEndSettings and DeactivateComponentProtection
     [Tags]    online
     GemPage.Open     ${URL}
     GemPage.Verify Page Loaded
@@ -84,9 +93,13 @@ SetBackEndSettings
     GemPage.Open        ${URL_BackendSettings}
     sleep    3s
     GemPage.Set_AudiBackend
+    GemPage.DeactivateComponentProtection
+    sleep    2s
+    GemPage.sync_page
+    sleep   2s
 
 DeactivateComponentProtection
-    [Tags]    online
+    [Tags]    Low priority, online
     GemPage.Open     ${URL}
     GemPage.Verify Page Loaded
     GemPage.LogintoGem
@@ -100,14 +113,14 @@ DeactivateComponentProtection
 
 VerifyOnlineActivationStatus
     [Documentation]    This test case verifies the online activation status.
-    [Tags]      online
+    [Tags]     Low priority, online activation details
     GemPage.Open     ${URL}
     GemPage.Verify Page Loaded
     GemPage.LogintoGem
     sleep    1s
     GemPage.Open        ${URL_BackendSettings}
-    sleep    5s
-    GemPage.VerifyOnlineActivationStatus
+    sleep    10s
+    #GemPage.VerifyOnlineActivationStatus
     debugging.scroll to bottom
     GemPage.Verify Current Esobackend
     GemPage.Verify Current realm

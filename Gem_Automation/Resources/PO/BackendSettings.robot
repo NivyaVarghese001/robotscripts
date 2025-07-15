@@ -69,28 +69,30 @@ Verify_ODPApproval_Status
     [Documentation]    Verify the ODP Approval Status on the page by checking the value of an input tag matches the expected text.
     [Arguments]      ${input_locator}    ${expected_text}
     wait until page contains element    ${backendSettings_elemement_verify}
+    #sleep    5s
     ${actual_value}=    Get Element Attribute    ${input_locator}    value
-    log to console    Actual value of input: ${actual_value}
+    log to console    ODPApproval_Status: ${actual_value}
     run keyword if    '${actual_value}' != '${expected_text}'    Fail    Expected "${expected_text}" but found "${actual_value}".
-    Log    Input value "${actual_value}" matches the expected text.
+    #log to console    Input value "${actual_value}" matches the expected text.
 
 Verify_Current_Esobackend_Available
     [Documentation]    Verify if the current Esobackend is available by checking the value of an input tag is not empty.
     [Arguments]      ${input_value_Esoserver}
-     wait until page contains element  ${input_value_Esoserver}
+    wait until page contains element  ${input_value_Esoserver}
     ${actual_value}=    Get Element Attribute    ${input_value_Esoserver}    value
-    log to console    Actual value of input: ${actual_value}
-    Run Keyword If    '${actual_value}' != 'None'    Fail    log to console    The input value is empty for locator and online is not established: ${input_value_Esoserver}
-    Log    Input value "${actual_value}" is not empty.
+    log to console    Esobackend_Available: ${actual_value}
+    Run Keyword If    '${actual_value}' == 'None'    Fail    log to console    The input value is empty for locator and online is not established: ${input_value_Esoserver}
+    #log to console    Input value for "${actual_value}" is not empty.
 
 Verify_Current_realm_available
     [Documentation]    Verify if the current realm is available by checking the value of an input tag is not empty.
     [Arguments]      ${input_locator_current_realm}
     wait until page contains element  ${input_locator_current_realm}
+    #sleep   5s
     ${actual_value}=    Get Element Attribute    ${input_locator_current_realm}    value
-    log to console    Actual value of input: ${actual_value}
-    Run Keyword If     '${actual_value}' != 'None'    Fail   log to console     The input value is empty for locator and online is not established: ${input_locator_current_realm}
-    Log    Input value "${actual_value}" is not empty.
+    log to console    Current_realm_available: ${actual_value}
+    Run Keyword If     '${actual_value}' == 'None'    Fail   log to console     The input value is empty for locator and online is not established: ${input_locator_current_realm}
+    #log to console    Input value "${actual_value}" is not empty.
 
 
 
